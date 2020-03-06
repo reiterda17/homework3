@@ -27,8 +27,8 @@ class AddEditNoteActivity : AppCompatActivity() {
         if(add != null){
             val note:Note? = NoteRepository.nID(this, add)
             if(note != null) {
-                add_edit_title.setText(note.title)
-                add_edit_text.setText(note.text)
+                title_change.setText(note.title)
+                text_change.setText(note.text)
             }
         }
     }
@@ -50,11 +50,11 @@ class AddEditNoteActivity : AppCompatActivity() {
 
                 if (
                     (add != null) &&
-                    (add_edit_text.text.toString().isNotEmpty() || add_edit_title.text.toString().isNotEmpty()) &&
+                    (text_change.text.toString().isNotEmpty() || title_change.text.toString().isNotEmpty()) &&
                     (token != null))
 
                 {
-                    val entry = Note(add, add_edit_title.text.toString(), add_edit_text.text.toString(), true)
+                    val entry = Note(add, title_change.text.toString(), text_change.text.toString(), true)
                     NoteRepository.nAdd(this, entry)
                     NoteRepository.uploadNote(
                         token,

@@ -43,9 +43,9 @@ class NoteViewHolder(itemView: View, val clickListener: (note: Note) -> Unit): R
 
     fun bindItem(note: Note) {
 
-        itemView.item_note_title.text = note.title
+        itemView.titleItem.text = note.title
 
-        itemView.item_note_text.text = note.text
+        itemView.textItem.text = note.text
 
         itemView.setOnClickListener{
             clickListener(note) }

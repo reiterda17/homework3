@@ -56,9 +56,8 @@ class NoteListActivity : AppCompatActivity() {
                     Log.e("Error", it)
                     nAdapt.updateList(NoteRepository.ngetAll(this))
                 })
-
-            note_recycler_view.layoutManager = StaggeredGridLayoutManager(2,1)
-            note_recycler_view.adapter = nAdapt
+            nRecView.layoutManager = StaggeredGridLayoutManager(2,1)
+            nRecView.adapter = nAdapt
 
         }
     }
@@ -102,8 +101,8 @@ class NoteListActivity : AppCompatActivity() {
 
         if (requestCode == EXTRA_ADDED_OR_EDITED_RESULT  && resultCode == Activity.RESULT_OK){
             nAdapt.updateList(NoteRepository.ngetAll(this))
-            note_recycler_view.layoutManager = StaggeredGridLayoutManager(2,1)
-            note_recycler_view.adapter = nAdapt
+            nRecView.layoutManager = StaggeredGridLayoutManager(2,1)
+            nRecView.adapter = nAdapt
         }
     }
 }

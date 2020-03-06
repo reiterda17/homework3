@@ -31,10 +31,10 @@ companion object{
             startActivity(intent)
         }
 
-        login_button.setOnClickListener {
-            if(login_username.text.toString().isNotEmpty() and login_password.text.toString().isNotEmpty()) {
+        LoginButton.setOnClickListener {
+            if(LoginUser.text.toString().isNotEmpty() and LoginPw.text.toString().isNotEmpty()) {
                 val authentic =
-                    AuthRequest(login_username.text.toString(), login_password.text.toString())
+                    AuthRequest(LoginUser.text.toString(), LoginPw.text.toString())
                     login(authentic,
                     success = {
 
